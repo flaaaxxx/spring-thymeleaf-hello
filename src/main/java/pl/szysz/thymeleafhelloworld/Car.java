@@ -17,7 +17,7 @@ public class Car {
         return mark;
     }
 
-    public Car(String model, String mark) {
+    public Car(String mark, String model) {
         this.model = model;
         this.mark = mark;
     }
