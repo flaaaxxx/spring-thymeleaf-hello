@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"  lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+</head>
+<body>
+    <p>Hello World</p>
+
+    <tr th:each="car: ${cars}">
+            <td th:text="${car.getMark()}"></td><br>
+            <td th:text="${car.getModel()}"></td><br>
+            <p>=======================</p>
+    </tr>
+
+<!--    *{model} odwoluje do modelu nadrzednego ${newCar}-->
+<!--    po wpisaniu tekstu w input, wartosc zostaje zapisana do modelu samochodu-->
+    <form th:action="@{/add-car}" th:object="${newCar}" method="POST">
+        <p>Model: <input type="text" th:field="*{model}"></p>
+        <p>Mark:  <input type="text" th:field="*{mark}"></p>
+        <p><input type="submit" value="Add new car"/></p>
+    </form>
+</body>
+</html>
